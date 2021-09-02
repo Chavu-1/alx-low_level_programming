@@ -2,40 +2,36 @@
 #include <stdio.h>
 
 /**
- * times_table - print multiplication table
+ * print_to_98 - Prints sequence of integers from argument value to 98
+ *
+ * Description:  Modify value of 'target' to alter number to print to
+ *
+ * @n:           First value to be printed in sequence to 98
+ *
+ * Return:       None
  */
 
-void times_table(void)
+void print_to_98(int n)
 {
-	int row;
-	int column;
-	int product;
+	int i, target, comma = 0;
 
-	for (row = 0; row <= 9; row++)
+	target = 98;  /* Change this value to adjust number to print to */
+
+	if (n <= target)
 	{
-		for (column = 0; column <= 9; column++)
+		for (i = n; i <= target; i++)
 		{
-			product = (row * column);
-
-			if (column == 0)
-			{
-				_putchar('0' + product);
-			}
-			else if (product <= 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar('0' + product);
-			}
-			else if (product > 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar('0' + (product / 10));
-				_putchar('0' + (product % 10));
-			}
+			comma == 0 ? comma = 1 : printf(", ");
+			printf("%d", i);
 		}
-		_putchar('\n');
 	}
+	else
+	{
+		for (i = n; i >= target; i--)
+		{
+			comma == 0 ? comma = 1 : printf(", ");
+			printf("%d", i);
+		}
+	}
+	putchar('\n');
 }
