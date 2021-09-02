@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
 
 /**
@@ -11,27 +11,36 @@
  * Return:       None
  */
 
+
 void print_to_98(int n)
 {
-	int i, target, comma = 0;
-
-	target = 98;  /* Change this value to adjust number to print to */
-
-	if (n <= target)
-	{
-		for (i = n; i <= target; i++)
-		{
-			comma == 0 ? comma = 1 : printf(", ");
-			printf("%d", i);
-		}
-	}
-	else
-	{
-		for (i = n; i >= target; i--)
-		{
-			comma == 0 ? comma = 1 : printf(", ");
-			printf("%d", i);
-		}
-	}
-	putchar('\n');
+if (n < 98)
+{
+while (n <= 98)
+{
+printf("%d", n);
+if (n != 98)
+{
+printf(", ");
+}
+n++;
+}
+}
+else if (n > 98)
+{
+while (n >= 98)
+{
+printf("%d", n);
+if (n != 98)
+{
+printf(", ");
+}
+n--;
+}
+}
+else
+{
+printf("98");
+}
+printf("\n");
 }
